@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Self-hosted fonts ---------- */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Geist-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Geist-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Geist-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/GeistMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/GeistMono-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Inter-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Inter-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
+
+/* ---------- Theme variables for the résumé canvas (default: vercel) ---------- */
+:root {
+  --theme-bg: #ffffff;
+  --theme-text-primary: #111111;
+  --theme-text-muted: #888888;
+  --theme-accent: #111111;
+  --theme-rule: #eaeaea;
+  --theme-chip-bg: #fafafa;
+  --theme-chip-text: #111111;
+  --theme-font-heading: 'Inter', system-ui, sans-serif;
+  --theme-font-body: 'Inter', system-ui, sans-serif;
+  --theme-font-mono: 'Geist Mono', monospace;
+}
+
+[data-theme='vercel'] {
+  --theme-bg: #ffffff;
+  --theme-text-primary: #111111;
+  --theme-text-muted: #888888;
+  --theme-accent: #111111;
+  --theme-rule: #eaeaea;
+  --theme-chip-bg: #fafafa;
+  --theme-chip-text: #111111;
+  --theme-font-heading: 'Inter', system-ui, sans-serif;
+  --theme-font-body: 'Inter', system-ui, sans-serif;
+  --theme-font-mono: 'Geist Mono', monospace;
+}
+
+[data-theme='linear'] {
+  --theme-bg: #ffffff;
+  --theme-text-primary: #111111;
+  --theme-text-muted: #6f6f6f;
+  --theme-accent: #111111;
+  --theme-rule: #e5e5e5;
+  --theme-chip-bg: #fafafa;
+  --theme-chip-text: #111111;
+  --theme-font-heading: 'Geist', system-ui, sans-serif;
+  --theme-font-body: 'Geist', system-ui, sans-serif;
+  --theme-font-mono: 'Geist Mono', monospace;
+}
+
+[data-theme='monospace'] {
+  --theme-bg: #ffffff;
+  --theme-text-primary: #111111;
+  --theme-text-muted: #888888;
+  --theme-accent: #111111;
+  --theme-rule: #eaeaea;
+  --theme-chip-bg: #f5f5f5;
+  --theme-chip-text: #111111;
+  --theme-font-heading: 'Geist Mono', monospace;
+  --theme-font-body: 'Geist Mono', monospace;
+  --theme-font-mono: 'Geist Mono', monospace;
+}
+
+/* ---------- Base ---------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  font-feature-settings:
+    'cv02' on,
+    'cv03' on,
+    'cv04' on,
+    'cv11' on;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 6px;
+  border: 2px solid #ffffff;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-clean {
+    box-shadow: none !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+}
