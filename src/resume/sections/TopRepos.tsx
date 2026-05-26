@@ -17,7 +17,7 @@ export function TopReposSection({
   data: ResumeData;
   theme: ThemeTokens;
 }) {
-  const [showAll, setShowAll] = useState(false);
+  const [showAll] = useState(false);
 
   if (data.topRepos.length === 0) return null;
 
